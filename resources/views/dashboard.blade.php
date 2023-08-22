@@ -35,6 +35,7 @@
             </div>
         </div>
     </section>
+    <script src="{{ asset('js/Main.js') }}"></script>
     @livewireScripts
 </body>
 </html>

@@ -8,6 +8,7 @@
     <script src="https://kit.fontawesome.com/7483adbd94.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{ asset('css/Styles.css') }}">
     
+
     <title>Mediturn</title>
 </head>
 <body class="relative">
@@ -36,7 +37,7 @@
                 </button>
 
                
-
+                
                 @livewire('show-pacients')
             </div>
         </div>

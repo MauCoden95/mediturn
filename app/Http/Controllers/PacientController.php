@@ -58,8 +58,10 @@ class PacientController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Pacient $pacient)
+    public function destroy($id)
     {
-        //
+        $pacient = Pacient::find($id)->delete();
+
+        return view('layouts.pacients');
     }
 }

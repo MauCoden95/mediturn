@@ -1,5 +1,6 @@
 <header class="w-full h-1/6 bg-sky-700 flex items-center justify-between">
     <h2 class="text-2xl ml-5">Bienvenido, {{ Auth::user()->username }}</h2>
+    <p id="date-hour" class="text-xl"></p>
     <form method="POST" action="{{ route('logout') }}">
         @csrf
 
