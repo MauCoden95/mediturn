@@ -12,7 +12,7 @@
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
         <img  src="{{ asset('img/Logo.png') }}" alt="Logo">
-        <form class="w-2/6 bg-white p-5 rounded-lg" method="POST" action="{{ route('login') }}">
+        <form class="w-2/6 bg-white p-5 rounded-lg" method="POST" action="{{ route('login') }}" autocomplete="off">
             
             @csrf
 

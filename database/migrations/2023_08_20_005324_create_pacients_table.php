@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('gender');
             $table->integer('dni');
             $table->string('address');
-            $table->date('birth_date');
+            $table->date('birth_date')->default('0000-00-00');
             $table->integer('phone1');
             $table->integer('phone2');
             $table->integer('phone3');

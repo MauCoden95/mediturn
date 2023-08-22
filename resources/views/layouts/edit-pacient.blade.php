@@ -15,7 +15,7 @@
             @include('layouts.header')
 
             <div class="w-full h-56 bg-sky-700 flex items-center justify-around">
-                {{--@livewire('data-pacient')--}}
+                @livewire('data-pacient')
             </div>
         </div>
     </section>

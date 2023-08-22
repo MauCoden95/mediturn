@@ -6,7 +6,8 @@ use Livewire\Component;
 use App\Models\Pacient;
 
 class ShowPacients extends Component
-{
+{   
+    protected $listeners = ['render' => 'render'];
     public function render()
     {
         $pacients = Pacient::all();
