@@ -34,8 +34,8 @@ class CreatePacient extends Component
 
         
 
-
         $this->emit('render');
+        $this->emit('save_pacient_success');
     }
 
     public function render()

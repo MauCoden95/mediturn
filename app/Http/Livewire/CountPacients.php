@@ -8,6 +8,7 @@ use App\Models\Pacient;
 class CountPacients extends Component
 {
     protected $listeners = ['render' => 'render'];
+    
     public function render()
     {
         $pacients = Pacient::all();
@@ -15,4 +16,6 @@ class CountPacients extends Component
 
         return view('livewire.count-pacients',compact('pacients_count'));
     }
+
+    
 }

@@ -18,19 +18,16 @@
             <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
             @foreach ($pacients as $pacient)
                 <tr>
-                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase bg-slate-200">{{$pacient->id}}</th>
-                        <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium text-gray-800 dark:text-gray-200 bg-slate-200">{{$pacient->name}}</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-800 dark:text-gray-200 bg-slate-200">{{$pacient->dni}}</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-800 dark:text-gray-200 bg-slate-200">{{$pacient->address}}</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-800 dark:text-gray-200 bg-slate-200">{{$pacient->birth_date}}</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-800 dark:text-gray-200 bg-slate-200">{{$pacient->phone1}}</td>
+                        <td scope="col" class="px-6 py-3 text-left text-xs font-medium text-stone-950 uppercase bg-slate-200">{{$pacient->id}}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium text-stone-950 bg-slate-200">{{$pacient->name}}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-center text-sm text-stone-950 bg-slate-200">{{$pacient->dni}}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-center text-sm text-stone-950 bg-slate-200">{{$pacient->address}}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-center text-sm text-stone-950 bg-slate-200">{{$pacient->birth_date}}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-center text-sm text-stone-950 bg-slate-200">{{$pacient->phone1}}</td>
                         <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium bg-slate-200 flex">
-                            <a class="text-blue-500 hover:text-blue-700 ml-2" href="http://127.0.0.1:8000/paciente/{{$pacient->id}}"><i class="far fa-edit text-2xl text-green-700"></i></a>
-                            <form class="ml-2" action="{{ route('pacient-delete', ['id' => $pacient->id]) }}" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button class="text-blue-500 hover:text-blue-700"><i class="fas fa-trash text-2xl text-red-700"></i></button>
-                            </form>
+                            <a class="text-blue-500 hover:text-blue-700 ml-2" href="http://127.0.0.1:8000/editar-paciente/{{$pacient->id}}"><i class="far fa-edit text-2xl text-green-700"></i></a>
+                            <button class="text-red-500 hover:text-red-700 ml-2" wire:click="delete({{ $pacient->id }})"><i class="fas fa-trash-alt text-2xl"></i></button>
+                          
                             
                         </td>
                 </tr>

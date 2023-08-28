@@ -42,17 +42,39 @@ class PacientController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Pacient $pacient)
+    public function edit(Pacient $id)
     {
-        //
+        $pacient = Pacient::find($id);
+        
+
+        return view('layouts.edit-pacient', compact('pacient'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Pacient $pacient)
+    public function update(Request $request, $id)
     {
-        //
+        $pacient = Pacient::find($id);
+
+        $pacient->update([
+            'name' => $request->input('name'),
+            'dni' => $request->input('dni'),
+            'address' => $request->input('address'),
+            'birth_date' => $request->input('birth_date'),
+            'phone1' => $request->input('phone1'),
+            'phone2' => $request->input('phone2'),
+            'health_insurance' => $request->input('health_insurance'),
+            'numbre_health_insurance' => $request->input('numbre_health_insurance'),
+            'history' => $request->input('history')
+        ]);
+
+        //return back()->with('success', 'Los datos se actualizaron con éxito');
+
+        session(['success' => 'Los datos se actualizaron con éxito']);
+
+
+        dd(session('success'));
     }
 
     /**
